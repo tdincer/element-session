@@ -108,11 +108,11 @@ jobs:
           prerelease: ${{steps.changelog_reader.outputs.status == 'prereleased'}}
           draft: ${{steps.changelog_reader.outputs.status == 'unreleased'}}
       - name: Fetch image artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: image-${{env.PKG_NAME}}-${{env.PKG_VERSION}}-py3.8-alpine
       - name: Fetch pip artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: pip-${{env.PKG_NAME}}-${{env.PKG_VERSION}}
           path: dist
